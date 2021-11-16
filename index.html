@@ -8,64 +8,69 @@
       src="https://kit.fontawesome.com/41881099c8.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="style.css" />
     <title>Odin | RPSLS</title>
   </head>
   <body>
     <header class="header">
       <h1 class="header__title">Rock Paper Scissors</h1>
+      <hr />
       <h2 class="header__subtitle">Lizard Spock</h2>
     </header>
     <div class="page-wrapper">
       <main class="game">
         <div class="game__content">
-          <div class="game__rules">
-            <p class="game__rule game__rule--basic">
-              First to <span class="game-rule__turn-count">5</span> wins
+          <div class="game__win-condition">
+            <p class="win-condition__txt">
+              First to <span class="txt__max-score">5</span> wins
             </p>
+          </div>
+          <div class="game__rules">
+            <h3 class="rule__heading">Rules</h3>
             <!-- Rock -->
             <p class="game__rule">
-              <span class="game-rule--red">Rock</span> beats
-              <span class="game-rule--purple">Scissors</span>
+              <span class="game--red">Rock</span> beats
+              <span class="game--purple">Scissors</span>
             </p>
             <p class="game__rule">
-              <span class="game-rule--red">Rock</span> beats
-              <span class="game-rule--green">Lizard</span>
+              <span class="game--red">Rock</span> beats
+              <span class="game--green">Lizard</span>
             </p>
             <!-- Paper -->
             <p class="game__rule">
-              <span class="game-rule--yellow">Paper</span> beats
-              <span class="game-rule--red">Rock</span>
+              <span class="game--yellow">Paper</span> beats
+              <span class="game--red">Rock</span>
             </p>
             <p class="game__rule">
-              <span class="game-rule--yellow">Paper</span> beats
-              <span class="game-rule--blue">Spock</span>
+              <span class="game--yellow">Paper</span> beats
+              <span class="game--blue">Spock</span>
             </p>
             <!-- Scissors -->
             <p class="game__rule">
-              <span class="game-rule--purple">Scissors</span> beats
-              <span class="game-rule--yellow">Paper</span>
+              <span class="game--purple">Scissors</span> beats
+              <span class="game--yellow">Paper</span>
             </p>
             <p class="game__rule">
-              <span class="game-rule--purple">Scissors</span> beats
-              <span class="game-rule--green">Lizard</span>
+              <span class="game--purple">Scissors</span> beats
+              <span class="game--green">Lizard</span>
             </p>
             <!-- Lizard -->
             <p class="game__rule">
-              <span class="game-rule--green">Lizard</span> beats
-              <span class="game-rule--blue">Spock</span>
+              <span class="game--green">Lizard</span> beats
+              <span class="game--blue">Spock</span>
             </p>
             <p class="game__rule">
-              <span class="game-rule--green">Lizard</span> beats
-              <span class="game-rule--yellow">Paper</span>
+              <span class="game--green">Lizard</span> beats
+              <span class="game--yellow">Paper</span>
             </p>
             <!-- Spock -->
             <p class="game__rule">
-              <span class="game-rule--blue">Spock</span> beats
-              <span class="game-rule--purple">Scissors</span>
+              <span class="game--blue">Spock</span> beats
+              <span class="game--purple">Scissors</span>
             </p>
             <p class="game__rule">
-              <span class="game-rule--blue">Spock</span> beats
-              <span class="game-rule--red">Rock</span>
+              <span class="game--blue">Spock</span> beats
+              <span class="game--red">Rock</span>
             </p>
           </div>
           <div class="game__score">
@@ -79,35 +84,48 @@
             </div>
           </div>
           <div class="game__choices">
-            <div class="game-choice game-choice--red">
+            <div class="game-choice">
               <button class="choice__btn" data-index="0">
-                <i class="fas fa-hand-rock"></i>
+                <i class="fas fa-hand-rock game--red"></i>
               </button>
-              <p class="choice__txt choice__txt--red">Rock</p>
+              <p class="choice__txt game--red">Rock</p>
             </div>
-            <div class="game-choice game-choice--yellow">
+            <div class="game-choice">
               <button class="choice__btn" data-index="1">
-                <i class="fas fa-hand-paper"></i>
+                <i class="fas fa-hand-paper game--yellow"></i>
               </button>
-              <p class="choice__txt choice__txt--yellow">Paper</p>
+              <p class="choice__txt game--yellow">Paper</p>
             </div>
-            <div class="game-choice game-choice--purple">
+            <div class="game-choice">
               <button class="choice__btn" data-index="2">
-                <i class="fas fa-hand-scissors"></i>
+                <i class="fas fa-hand-scissors game--purple"></i>
               </button>
-              <p class="choice__txt choice__txt--purple">Scissors</p>
+              <p class="choice__txt game--purple">Scissors</p>
             </div>
-            <div class="game-choice game-choice--green">
+            <div class="game-choice">
               <button class="choice__btn" data-index="3">
-                <i class="fas fa-hand-lizard"></i>
+                <i class="fas fa-hand-lizard game--green"></i>
               </button>
-              <p class="choice__txt choice__txt--green">Lizard</p>
+              <p class="choice__txt game--green">Lizard</p>
             </div>
-            <div class="game-choice game-choice--blue">
+            <div class="game-choice">
               <button class="choice__btn" data-index="4">
-                <i class="fas fa-hand-spock"></i>
+                <i class="fas fa-hand-spock game--blue"></i>
               </button>
-              <p class="choice__txt choice__txt--blue">Spock</p>
+              <p class="choice__txt game--blue">Spock</p>
+            </div>
+          </div>
+          <div class="game__result">
+            <div class="result__content">
+              <p class="result__txt">You Win!</p>
+              <i class="fas fa-hand-rock game--red"></i>
+              <i class="fas fa-hand-scissors game--purple"></i>
+              <div class="result__txt-wrapper">
+                <p class="result-txt">
+                  <span class="game--red">Rock</span> crushes
+                  <span class="game--purple">Scissors</span>
+                </p>
+              </div>
             </div>
           </div>
         </div>

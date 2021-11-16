@@ -1,0 +1,97 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --bg-color: #e5e5e5;
+  --game-blue: #4a57ba;
+  --game-green: #48864d;
+  --game-purple: #5f388b;
+  --game-red: #a5494f;
+  --game-yellow: #a7a15a;
+  --game-font-style: "Roboto", Arial, Helvetica, sans-serif;
+  --game-primary-color: #333;
+  --game-secondary-color: #999999;
+}
+body {
+  background-color: var(--bg-color);
+}
+h1,
+h2,
+h3,
+span,
+p {
+  font-family: var(--game-font-style);
+}
+header {
+  padding: 1rem 0.5rem 0.2rem;
+}
+h1 {
+  color: var(--game-primary-color);
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+}
+h2 {
+  color: var(--game-secondary-color);
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+}
+hr {
+  border: 1px solid black;
+  margin: 1px auto;
+  max-width: 175px;
+}
+p {
+  text-transform: uppercase;
+}
+span {
+  font-weight: bolder;
+}
+.page-wrapper {
+  margin: 0 auto;
+  max-width: 1200px;
+  min-height: 100vh;
+  padding: 0.5em;
+}
+.game__win-condition {
+  margin-bottom: 0.9em;
+  text-align: center;
+}
+.win-condition__txt {
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+.game__rules {
+  text-align: center;
+}
+.rule__heading {
+  font-size: 0.7rem;
+  padding-bottom: 0.5em;
+}
+.game__rule {
+  font-size: 0.5rem;
+  padding: 0.3em;
+  text-transform: uppercase;
+}
+.game--red {
+  color: var(--game-red);
+}
+.game--green {
+  color: var(--game-green);
+}
+.game--blue {
+  color: var(--game-blue);
+}
+.game--yellow {
+  color: var(--game-yellow);
+}
+.game--purple {
+  color: var(--game-purple);
+}

@@ -54,11 +54,60 @@ p {
 span {
   font-weight: bolder;
 }
+button:hover {
+  cursor: pointer;
+}
 .page-wrapper {
   margin: 0 auto;
-  max-width: 1200px;
-  min-height: 100vh;
+  max-width: 540px;
+  max-height: 100vh;
   padding: 0.5em;
+}
+.game__score {
+  display: flex;
+  justify-content: space-around;
+}
+.scorer {
+  display: flex;
+  gap: 0.5em;
+}
+.btn {
+  border-radius: 4px;
+  padding: 0.5em;
+  margin: 0.5rem 0;
+}
+.btn:hover i {
+  color: white;
+}
+.btn--rock {
+  border: solid 2px var(--game-red);
+}
+.btn--rock:hover {
+  background-color: var(--game-red);
+}
+.btn--paper {
+  border: solid 2px var(--game-yellow);
+}
+.btn--paper:hover {
+  background-color: var(--game-yellow);
+}
+.btn--scissors {
+  border: solid 2px var(--game-purple);
+}
+.btn--scissors:hover {
+  background-color: var(--game-purple);
+}
+.btn--lizard {
+  border: solid 2px var(--game-green);
+}
+.btn--lizard:hover {
+  background-color: var(--game-green);
+}
+.btn--spock {
+  border: solid 2px var(--game-blue);
+}
+.btn--spock:hover {
+  background-color: var(--game-blue);
 }
 .game__win-condition {
   margin-bottom: 0.9em;
@@ -80,18 +129,26 @@ span {
   padding: 0.3em;
   text-transform: uppercase;
 }
-.game--red {
+.color-red {
   color: var(--game-red);
 }
-.game--green {
+.color-green {
   color: var(--game-green);
 }
-.game--blue {
+.color-blue {
   color: var(--game-blue);
 }
-.game--yellow {
+.color-yellow {
   color: var(--game-yellow);
 }
-.game--purple {
+.color-purple {
   color: var(--game-purple);
+}
+
+/* utility classes */
+.grow {
+  transition: all 0.3s ease;
+}
+.grow:hover {
+  transform: scale(1.2);
 }

@@ -76,38 +76,20 @@ button:hover {
   padding: 0.5em;
   margin: 0.5rem 0;
 }
-.btn:hover i {
-  color: white;
-}
 .btn--rock {
   border: solid 2px var(--game-red);
-}
-.btn--rock:hover {
-  background-color: var(--game-red);
 }
 .btn--paper {
   border: solid 2px var(--game-yellow);
 }
-.btn--paper:hover {
-  background-color: var(--game-yellow);
-}
 .btn--scissors {
   border: solid 2px var(--game-purple);
-}
-.btn--scissors:hover {
-  background-color: var(--game-purple);
 }
 .btn--lizard {
   border: solid 2px var(--game-green);
 }
-.btn--lizard:hover {
-  background-color: var(--game-green);
-}
 .btn--spock {
   border: solid 2px var(--game-blue);
-}
-.btn--spock:hover {
-  background-color: var(--game-blue);
 }
 .game__win-condition {
   margin-bottom: 0.9em;
@@ -149,6 +131,27 @@ button:hover {
 .grow {
   transition: all 0.3s ease;
 }
-.grow:hover {
-  transform: scale(1.2);
+
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover i {
+    color: white;
+  }
+  .btn--rock:hover {
+    background-color: var(--game-red);
+  }
+  .btn--paper:hover {
+    background-color: var(--game-yellow);
+  }
+  .btn--scissors:hover {
+    background-color: var(--game-purple);
+  }
+  .btn--lizard:hover {
+    background-color: var(--game-green);
+  }
+  .btn--spock:hover {
+    background-color: var(--game-blue);
+  }
+  .grow:hover {
+    transform: scale(1.2);
+  }
 }

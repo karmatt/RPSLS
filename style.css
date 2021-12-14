@@ -27,7 +27,7 @@ p {
   font-family: var(--game-font-style);
 }
 header {
-  padding: 1rem 0.5rem 0.2rem;
+  padding: 16px 10px 6px;
 }
 h1 {
   color: var(--game-primary-color);
@@ -56,15 +56,13 @@ span {
 }
 .page-wrapper {
   margin: 0 auto;
-  max-width: 540px;
   max-height: 100vh;
-  padding: 0.5em;
-}
-.game__content {
-  margin: 0 auto;
+  max-width: 460px;
+  padding: 0 10px;
+  width: 100%;
 }
 .game__win-condition {
-  margin-bottom: 0.9em;
+  margin-bottom: 16px;
   text-align: center;
 }
 .win-condition__txt {
@@ -76,64 +74,74 @@ span {
 }
 .rule__heading {
   font-size: 0.7rem;
-  padding-bottom: 0.5em;
+  padding-bottom: 8px;
 }
 .game__rule {
-  font-size: 0.5rem;
-  padding: 0.3em;
+  font-size: 1rem;
+  padding: 6px;
   text-transform: uppercase;
 }
 .game__score {
+  border: solid 4px var(--game-primary-color);
+  border-radius: 4px;
   display: flex;
   justify-content: space-around;
-  margin: 0.5em;
+  margin: 32px;
+  padding: 8px;
 }
 .scorer {
   display: flex;
-  gap: 0.5em;
+  gap: 8px;
 }
 .btn {
+  border: solid 3px var(--game-primary-color);
   border-radius: 4px;
-  padding: 0.5em;
+  padding: 8px;
+}
+.btn__txt {
+  color: var(--game-primary-color);
+}
+.btn--cta {
+  align-items: center;
+  column-gap: 16px;
+  display: flex;
   margin: 0 auto;
+  padding: 8px 20px;
 }
-.game__choices {
-  display: grid;
-  grid-template-areas:
-    "rock paper scissors"
-    " . lizard spock";
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
+.game__selections {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
 }
-.game-choice--rock {
-  grid-area: "rock";
+.game-selection__row {
+  column-gap: 18px;
+  display: flex;
+  flex-direction: row;
 }
-.game-choice--paper {
-  grid-area: "paper";
+.game-selection {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
 }
-.game-choice--scissors {
-  grid-area: "scissors";
-}
-.game__choice--lizard {
-  grid-area: "lizard";
-}
-.game__choice--spock {
-  grid-area: "spock";
+.selection__txt {
+  text-align: center;
 }
 .btn--rock {
-  border: solid 2px var(--game-red);
+  border: solid 3px var(--game-red);
 }
 .btn--paper {
-  border: solid 2px var(--game-yellow);
+  border: solid 3px var(--game-yellow);
 }
 .btn--scissors {
-  border: solid 2px var(--game-purple);
+  border: solid 3px var(--game-purple);
 }
 .btn--lizard {
-  border: solid 2px var(--game-green);
+  border: solid 3px var(--game-green);
 }
 .btn--spock {
-  border: solid 2px var(--game-blue);
+  border: solid 3px var(--game-blue);
 }
 .result__content {
   align-items: center;
@@ -141,19 +149,50 @@ span {
   flex-direction: column;
   border: solid 4px var(--game-primary-color);
   border-radius: 6px;
-  margin-top: 3rem;
-  padding: 0.5rem;
+  margin-top: 24px;
+  padding: 8px;
 }
 .result__txt {
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 0.8rem;
+  margin-bottom: 10px;
 }
 .result__selections {
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
 }
 .result__selections > * {
-  margin-right: 1rem;
+  margin-right: 16px;
+}
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.8);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.modal {
+  background: whitesmoke;
+  border-radius: 6px;
+  display: block;
+  left: 50%;
+  max-width: 300px;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.btn--close {
+  margin: 8px;
+  padding: 3px;
+  position: absolute;
+}
+.modal__content {
+  padding: 8px 10px;
+  text-align: center;
+}
+.content__heading {
+  margin-bottom: 5px;
 }
 .color-red {
   color: var(--game-red);
@@ -180,8 +219,11 @@ span {
   button:hover {
     cursor: pointer;
   }
-  .btn:hover i {
-    color: white;
+  .btn:hover {
+    background-color: var(--game-primary-color);
+  }
+  .btn:hover > * {
+    color: whitesmoke;
   }
   .btn--rock:hover {
     background-color: var(--game-red);

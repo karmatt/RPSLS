@@ -26,52 +26,10 @@
             </p>
           </div>
           <div class="game__rules">
-            <h3 class="rule__heading">Rules</h3>
-            <!-- Rock -->
-            <p class="game__rule">
-              <span class="color-red">Rock</span> beats
-              <span class="color-purple">Scissors</span>
-            </p>
-            <p class="game__rule">
-              <span class="color-red">Rock</span> beats
-              <span class="color-green">Lizard</span>
-            </p>
-            <!-- Paper -->
-            <p class="game__rule">
-              <span class="color-yellow">Paper</span> beats
-              <span class="color-red">Rock</span>
-            </p>
-            <p class="game__rule">
-              <span class="color-yellow">Paper</span> beats
-              <span class="color-blue">Spock</span>
-            </p>
-            <!-- Scissors -->
-            <p class="game__rule">
-              <span class="color-purple">Scissors</span> beats
-              <span class="color-yellow">Paper</span>
-            </p>
-            <p class="game__rule">
-              <span class="color-purple">Scissors</span> beats
-              <span class="color-green">Lizard</span>
-            </p>
-            <!-- Lizard -->
-            <p class="game__rule">
-              <span class="color-green">Lizard</span> beats
-              <span class="color-blue">Spock</span>
-            </p>
-            <p class="game__rule">
-              <span class="color-green">Lizard</span> beats
-              <span class="color-yellow">Paper</span>
-            </p>
-            <!-- Spock -->
-            <p class="game__rule">
-              <span class="color-blue">Spock</span> beats
-              <span class="color-purple">Scissors</span>
-            </p>
-            <p class="game__rule">
-              <span class="color-blue">Spock</span> beats
-              <span class="color-red">Rock</span>
-            </p>
+            <button class="btn btn--cta modal-toggle">
+              <p class="btn__txt">Rules</p>
+              <i class="fas fa-plus-square fa-lg"></i>
+            </button>
           </div>
           <div class="game__score">
             <div class="scorer">
@@ -83,36 +41,42 @@
               <p class="computer__score">0</p>
             </div>
           </div>
-          <div class="game__choices">
-            <div class="game-choice game-choice--rock">
-              <button class="btn btn--rock grow" data-index="0">
-                <i class="fas fa-hand-rock fa-3x color-red"></i>
-              </button>
-              <p class="choice__txt color-red">Rock</p>
+          <div class="game__selections">
+            <div class="game-selection__row">
+              <div class="game-selection game-selection--rock">
+                <button class="btn btn--rock grow" data-index="0">
+                  <i class="fas fa-hand-rock fa-3x hand-icon color-red"></i>
+                </button>
+                <p class="selection__txt color-red">Rock</p>
+              </div>
+              <div class="game-selection game-selection--paper">
+                <button class="btn btn--paper grow" data-index="1">
+                  <i class="fas fa-hand-paper fa-3x hand-icon color-yellow"></i>
+                </button>
+                <p class="selection__txt color-yellow">Paper</p>
+              </div>
+              <div class="game-selection game-selection--scissors">
+                <button class="btn btn--scissors grow" data-index="2">
+                  <i
+                    class="fas fa-hand-scissors fa-3x hand-icon color-purple"
+                  ></i>
+                </button>
+                <p class="selection__txt color-purple">Scissors</p>
+              </div>
             </div>
-            <div class="game-choice game-choice--paper">
-              <button class="btn btn--paper grow" data-index="1">
-                <i class="fas fa-hand-paper fa-3x color-yellow"></i>
-              </button>
-              <p class="choice__txt color-yellow">Paper</p>
-            </div>
-            <div class="game-choice game-choice--scissors">
-              <button class="btn btn--scissors grow" data-index="2">
-                <i class="fas fa-hand-scissors fa-3x color-purple"></i>
-              </button>
-              <p class="choice__txt color-purple">Scissors</p>
-            </div>
-            <div class="game-choice game-choice--lizard">
-              <button class="btn btn--lizard grow" data-index="3">
-                <i class="fas fa-hand-lizard fa-3x color-green"></i>
-              </button>
-              <p class="choice__txt color-green">Lizard</p>
-            </div>
-            <div class="game-choice game-choice--spock">
-              <button class="btn btn--spock grow" data-index="4">
-                <i class="fas fa-hand-spock fa-3x color-blue"></i>
-              </button>
-              <p class="choice__txt color-blue">Spock</p>
+            <div class="game-selection__row">
+              <div class="game-selection game-selection--lizard">
+                <button class="btn btn--lizard grow" data-index="3">
+                  <i class="fas fa-hand-lizard fa-3x hand-icon color-green"></i>
+                </button>
+                <p class="selection__txt color-green">Lizard</p>
+              </div>
+              <div class="game-selection game-selection--spock">
+                <button class="btn btn--spock grow" data-index="4">
+                  <i class="fas fa-hand-spock fa-3x hand-icon color-blue"></i>
+                </button>
+                <p class="selection__txt color-blue">Spock</p>
+              </div>
             </div>
           </div>
           <div class="game__result">
@@ -132,6 +96,60 @@
           </div>
         </div>
       </main>
+    </div>
+    <div class="modal-overlay"></div>
+    <div class="modal">
+      <button class="btn btn--close">
+        <p>X</p>
+      </button>
+      <div class="modal__content">
+        <h3 class="content__heading">Rules</h3>
+        <!-- Rock -->
+        <p class="game__rule">
+          <span class="color-red">Rock</span> beats
+          <span class="color-purple">Scissors</span>
+        </p>
+        <p class="game__rule">
+          <span class="color-red">Rock</span> beats
+          <span class="color-green">Lizard</span>
+        </p>
+        <!-- Paper -->
+        <p class="game__rule">
+          <span class="color-yellow">Paper</span> beats
+          <span class="color-red">Rock</span>
+        </p>
+        <p class="game__rule">
+          <span class="color-yellow">Paper</span> beats
+          <span class="color-blue">Spock</span>
+        </p>
+        <!-- Scissors -->
+        <p class="game__rule">
+          <span class="color-purple">Scissors</span> beats
+          <span class="color-yellow">Paper</span>
+        </p>
+        <p class="game__rule">
+          <span class="color-purple">Scissors</span> beats
+          <span class="color-green">Lizard</span>
+        </p>
+        <!-- Lizard -->
+        <p class="game__rule">
+          <span class="color-green">Lizard</span> beats
+          <span class="color-blue">Spock</span>
+        </p>
+        <p class="game__rule">
+          <span class="color-green">Lizard</span> beats
+          <span class="color-yellow">Paper</span>
+        </p>
+        <!-- Spock -->
+        <p class="game__rule">
+          <span class="color-blue">Spock</span> beats
+          <span class="color-purple">Scissors</span>
+        </p>
+        <p class="game__rule">
+          <span class="color-blue">Spock</span> beats
+          <span class="color-red">Rock</span>
+        </p>
+      </div>
     </div>
   </body>
 </html>

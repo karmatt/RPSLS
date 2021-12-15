@@ -79,7 +79,6 @@ span {
 .game__rule {
   font-size: 1rem;
   padding: 6px;
-  text-transform: uppercase;
 }
 .game__score {
   border: solid 4px var(--game-primary-color);
@@ -165,11 +164,15 @@ span {
 }
 .modal-overlay {
   background: rgba(0, 0, 0, 0.8);
+  display: block;
   height: 100%;
   left: 0;
   position: fixed;
   top: 0;
   width: 100%;
+}
+.modal-overlay--closed {
+  display: none;
 }
 .modal {
   background: whitesmoke;
@@ -182,14 +185,21 @@ span {
   transform: translate(-50%, -50%);
   width: 100%;
 }
+.modal--closed {
+  display: none;
+}
 .btn--close {
-  margin: 8px;
-  padding: 3px;
+  margin: 10px;
+  padding: 5px;
   position: absolute;
 }
 .modal__content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 8px 10px;
-  text-align: center;
+  row-gap: 10px;
 }
 .content__heading {
   margin-bottom: 5px;
@@ -216,7 +226,7 @@ span {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  button:hover {
+  .clickable:hover {
     cursor: pointer;
   }
   .btn:hover {

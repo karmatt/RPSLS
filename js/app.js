@@ -34,8 +34,8 @@ function toggleRuleModal() {
     modalOverlay.classList.toggle("modal-overlay--closed");
     rulesModal.classList.toggle("modal--closed");
 }
-function updateLabel(selection) {
-    if (game.isOver() ) {
+function updateLabel(selection = "") {
+    if (selection.length === 0) {
         return `<i class="fas fa-question fa-3x"></i>`
     }
     let newColor = ""
@@ -84,5 +84,7 @@ function resetGame() {
     player.textContent = game.getPlayerScore();
     computer.textContent = game.getComputerScore();
     roundResult.textContent = defaultText;
+    playerSelectionElement.innerHTML = updateLabel();
+    computerSelectionElement.innerHTML = updateLabel();
 }
 start();

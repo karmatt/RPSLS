@@ -205,25 +205,25 @@ span {
 .content__heading {
   margin-bottom: 5px;
 }
-.color-red {
-  color: var(--game-red);
-}
-.color-green {
-  color: var(--game-green);
-}
-.color-blue {
-  color: var(--game-blue);
-}
-.color-yellow {
-  color: var(--game-yellow);
-}
-.color-purple {
-  color: var(--game-purple);
-}
 
 /* utility classes */
 .grow {
   transition: all 0.3s ease;
+}
+.red {
+  color: var(--game-red);
+}
+.green {
+  color: var(--game-green);
+}
+.blue {
+  color: var(--game-blue);
+}
+.yellow {
+  color: var(--game-yellow);
+}
+.purple {
+  color: var(--game-purple);
 }
 
 @media (hover: hover) and (pointer: fine) {

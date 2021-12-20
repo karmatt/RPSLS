@@ -4,7 +4,13 @@ let computerScore = 0;
 
 const maxScore = 5;
 
-function isGameOver() {
+function getPlayerScore() {
+    return playerScore;
+}
+function getComputerScore() {
+    return computerScore;
+}
+function isOver() {
     if (playerScore === maxScore || computerScore === maxScore) {
         return true;
     }
@@ -71,11 +77,11 @@ function messageFrom(result) {
     }
     return message;
 }
-function resetGame() {
-    if (isGameOver()) {
+function reset() {
+    if (isOver()) {
         playerScore = 0;
         computerScore = 0;
     }
 }
 
-export { playerScore, computerScore, isGameOver, computerPlay, play, resetGame }
+export { getPlayerScore, getComputerScore, isOver, computerPlay, play, reset }

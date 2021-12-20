@@ -1,4 +1,4 @@
-import { playerScore, computerScore, isGameOver, computerPlay, play, resetGame } from "./game.js";
+import * as game from "./game.js";
 
 const player = document.querySelector(".human__score");
 const computer = document.querySelector(".computer__score");
@@ -17,11 +17,16 @@ rulesButton.addEventListener("click", toggleRuleModal);
 modalOverlay.addEventListener("click", toggleRuleModal);
 closeButton.addEventListener("click", toggleRuleModal);
 
+const defaultText = roundResult.textContent;
+
 function start() {
     selectionButtons.forEach((button) => {
         button.addEventListener("click", () => {
             const selection = button.id;
             playGame(selection);
+            if (game.isOver()) {
+                showModal();
+            }
         });
     });
 }
@@ -30,6 +35,9 @@ function toggleRuleModal() {
     rulesModal.classList.toggle("modal--closed");
 }
 function updateLabel(selection) {
+    if (game.isOver() ) {
+        return `<i class="fas fa-question fa-3x"></i>`
+    }
     let newColor = ""
     switch (selection) {
         case "rock":
@@ -48,24 +56,16 @@ function updateLabel(selection) {
             newColor = "blue";
             break;
     }
-    return `<i class="fas fa-hand-${selection} color-${newColor} fa-3x"></i>`
+    return `<i class="fas fa-hand-${selection} ${newColor} fa-3x"></i>`
 }
 function playGame(playerSelection) {
-    if (isGameOver()) {
-        showModal();
-    }
-
-    const computerSelection = computerPlay();
-    const resultMessage = play(playerSelection, computerSelection);
-    player.textContent = `${playerScore}`;
-    computer.textContent = `${computerScore}`;
+    const computerSelection = game.computerPlay();
+    const resultMessage = game.play(playerSelection, computerSelection);
+    player.textContent = game.getPlayerScore();
+    computer.textContent = game.getComputerScore();
     roundResult.textContent = resultMessage;
     playerSelectionElement.innerHTML = updateLabel(playerSelection);
     computerSelectionElement.innerHTML = updateLabel(computerSelection);
-
-    if (isGameOver()) {
-        showModal();
-    }
 
 }
 function showModal() {
@@ -73,18 +73,16 @@ function showModal() {
     modalOverlay.classList.toggle("clickable");
     modalOverlay.removeEventListener("click", toggleRuleModal);
     playAgainModal.classList.toggle("modal--closed");
-    playAgainBtn.addEventListener("click", playAgain);
-    
-
-
+    playAgainBtn.addEventListener("click", resetGame);
 }
-function playAgain() {
+function resetGame() {
     modalOverlay.classList.toggle("modal-overlay--closed");
     modalOverlay.classList.toggle("clickable");
     modalOverlay.addEventListener("click", toggleRuleModal);
     playAgainModal.classList.toggle("modal--closed");
-    resetGame();
-    player.textContent = `${playerScore}`;
-    computer.textContent = `${computerScore}`;
+    game.reset();
+    player.textContent = game.getPlayerScore();
+    computer.textContent = game.getComputerScore();
+    roundResult.textContent = defaultText;
 }
 start();

@@ -81,11 +81,9 @@ span {
   padding: 6px;
 }
 .game__score {
-  border: solid 4px var(--game-primary-color);
-  border-radius: 4px;
   display: flex;
   justify-content: space-around;
-  margin: 32px;
+  margin: 12px;
   padding: 8px;
 }
 .scorer {
@@ -111,6 +109,7 @@ span {
   align-items: center;
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
   row-gap: 14px;
 }
 .game-selection__row {
@@ -157,7 +156,9 @@ span {
   margin-bottom: 10px;
 }
 .result__selections {
-  margin-bottom: 8px;
+  column-gap: 20px;
+  display: flex;
+  margin-bottom: 15px;
 }
 .result__selections > * {
   margin-right: 16px;

@@ -9,37 +9,25 @@ const computerSelectionElement = document.querySelector(".result-selection__comp
 const rulesButton = document.querySelector(".modal-toggle");
 const modalOverlay = document.querySelector(".modal-overlay");
 const rulesModal = document.querySelector(".modal--primary");
-const playAgainModal = document.querySelector(".modal--secondary");
 const closeButton = document.querySelector(".btn--close");
+const playAgainModal = document.querySelector(".modal--secondary");
+const playAgainBtn = document.querySelector(".modal__btn")
 
+rulesButton.addEventListener("click", toggleRuleModal);
+modalOverlay.addEventListener("click", toggleRuleModal);
+closeButton.addEventListener("click", toggleRuleModal);
 
-function toggleRuleModal() {
-    modalOverlay.classList.toggle("modal-overlay--closed");
-    rulesModal.classList.toggle("modal--closed");
-}
 function start() {
-    rulesButton.addEventListener("click", toggleRuleModal);
-    modalOverlay.addEventListener("click", toggleRuleModal);
-    closeButton.addEventListener("click", toggleRuleModal);
-
     selectionButtons.forEach((button) => {
         button.addEventListener("click", () => {
-            let selectedButton = button.id;
-            playGame(selectedButton);
+            const selection = button.id;
+            playGame(selection);
         });
     });
 }
-function playGame(playerSelection) {
-    if (isGameOver()) {
-        return;
-    }
-    const computerSelection = computerPlay();
-    const resultMessage = play(playerSelection, computerSelection);
-    player.textContent = `${playerScore}`;
-    computer.textContent = `${computerScore}`;
-    roundResult.textContent = resultMessage;
-    playerSelectionElement.innerHTML = updateLabel(playerSelection);
-    computerSelectionElement.innerHTML = updateLabel(computerSelection);
+function toggleRuleModal() {
+    modalOverlay.classList.toggle("modal-overlay--closed");
+    rulesModal.classList.toggle("modal--closed");
 }
 function updateLabel(selection) {
     let newColor = ""
@@ -61,5 +49,42 @@ function updateLabel(selection) {
             break;
     }
     return `<i class="fas fa-hand-${selection} color-${newColor} fa-3x"></i>`
+}
+function playGame(playerSelection) {
+    if (isGameOver()) {
+        showModal();
+    }
+
+    const computerSelection = computerPlay();
+    const resultMessage = play(playerSelection, computerSelection);
+    player.textContent = `${playerScore}`;
+    computer.textContent = `${computerScore}`;
+    roundResult.textContent = resultMessage;
+    playerSelectionElement.innerHTML = updateLabel(playerSelection);
+    computerSelectionElement.innerHTML = updateLabel(computerSelection);
+
+    if (isGameOver()) {
+        showModal();
+    }
+
+}
+function showModal() {
+    modalOverlay.classList.toggle("modal-overlay--closed");
+    modalOverlay.classList.toggle("clickable");
+    modalOverlay.removeEventListener("click", toggleRuleModal);
+    playAgainModal.classList.toggle("modal--closed");
+    playAgainBtn.addEventListener("click", playAgain);
+    
+
+
+}
+function playAgain() {
+    modalOverlay.classList.toggle("modal-overlay--closed");
+    modalOverlay.classList.toggle("clickable");
+    modalOverlay.addEventListener("click", toggleRuleModal);
+    playAgainModal.classList.toggle("modal--closed");
+    resetGame();
+    player.textContent = `${playerScore}`;
+    computer.textContent = `${computerScore}`;
 }
 start();

@@ -11,7 +11,7 @@ const modalOverlay = document.querySelector(".modal-overlay");
 const rulesModal = document.querySelector(".modal--primary");
 const closeButton = document.querySelector(".btn--close");
 const playAgainModal = document.querySelector(".modal--secondary");
-const playAgainBtn = document.querySelector(".modal__btn")
+const playAgainBtn = document.querySelector(".modal-content__btn")
 
 rulesButton.addEventListener("click", toggleRuleModal);
 modalOverlay.addEventListener("click", toggleRuleModal);

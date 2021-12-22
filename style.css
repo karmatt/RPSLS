@@ -69,16 +69,9 @@ span {
   font-size: 0.7rem;
   font-weight: bold;
 }
-.game__rules {
-  text-align: center;
-}
 .rule__heading {
   font-size: 0.7rem;
   padding-bottom: 8px;
-}
-.game__rule {
-  font-size: 1rem;
-  padding: 6px;
 }
 .game__score {
   display: flex;
@@ -156,12 +149,9 @@ span {
   margin-bottom: 10px;
 }
 .result__selections {
-  column-gap: 20px;
+  column-gap: 50px;
   display: flex;
   margin-bottom: 15px;
-}
-.result__selections > * {
-  margin-right: 16px;
 }
 .modal-overlay {
   background: rgba(0, 0, 0, 0.8);
@@ -177,7 +167,7 @@ span {
 }
 .modal {
   background: whitesmoke;
-  border-radius: 6px;
+  border-radius: 12px;
   display: block;
   left: 50%;
   max-width: 300px;
@@ -193,19 +183,29 @@ span {
   margin: 10px;
   padding: 5px;
   position: absolute;
+  right: 0;
+  top: 0;
 }
 .modal__content {
-  align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 8px 10px;
-  row-gap: 10px;
+  padding: 16px;
 }
-.content__heading {
+.game__rule {
+  font-size: 0.9rem;
+  padding: 6px;
+}
+.modal-content__heading {
   margin-bottom: 5px;
 }
-
+.modal-content__txt {
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 10px;
+}
+.modal-content__btn {
+  align-self: center;
+}
 /* utility classes */
 .grow {
   transition: all 0.3s ease;

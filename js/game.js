@@ -1,7 +1,6 @@
-
+import { Round } from "./round.js";
 let playerScore = 0;
 let computerScore = 0;
-
 const maxScore = 5;
 
 function getPlayerScore() {
@@ -53,11 +52,25 @@ function playRound(player = 0, computer = 0) {
     let result = resultMatrix[player][computer];
     return result;
 }
+function getRoundResult(player = 0, computer = 0) {
+    const resultMessageMatrix = [
+        ["Ties", "Covered By", "Crushes", "Crushes", "Vaporized By"],
+        ["Covers", "Ties", "Cut By", "Eaten By", "Disproves"],
+        ["Crushed By", "Cuts", "Ties", "Decapitates", "Smashed By"],
+        ["Crushed By", "Eats", "Decapitated By", "Ties", "Poisons"],
+        ["Vaporizes", "Disproved By", "Smashes", "Poisoned By", "Ties"]
+    ];
+    const roundResultMessage = resultMessageMatrix[player][computer];
+    return roundResultMessage;
+}
 function play(playerSelection = "", computerSelection = "") {
    const playerCode = codeFrom(playerSelection);
    const computerCode = codeFrom(computerSelection);
-   const result = playRound(playerCode, computerCode);
-   return messageFrom(result);
+   const roundResultCode = playRound(playerCode, computerCode);
+   const roundResult = messageFrom(roundResultCode);
+   const roundDescription = getRoundResult(playerCode, computerCode);
+   const round = new Round(roundResult, roundDescription);
+   return round;
 }
 function messageFrom(result) {
     let message = "";
@@ -84,4 +97,4 @@ function reset() {
     }
 }
 
-export { getPlayerScore, getComputerScore, isOver, computerPlay, play, reset }
+export { maxScore, getPlayerScore, getComputerScore, isOver, computerPlay, play, reset };
